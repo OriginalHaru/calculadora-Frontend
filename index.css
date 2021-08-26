@@ -1,0 +1,76 @@
+*{ /* selector de tipo universal (selecciona todo el contenido del HTML) en este caso pide una tipografia fraunces y un color blanco para todo el texto*/
+
+	font-family: "Fraunces", serif;/* font-family hace referencia a la tipografia*/  
+	color: #fff; /* color de la letra (un tipo de blanco) */
+}
+
+body {
+	margin: 0; /*margin = margen (0 en este caso)*/
+	background-color: #224870; /*color del fondo de la pantalla (un tipo de azul)*/
+}
+
+.container { /*modificamos la clase container ( se pone un punto ya que el "container" es selector de tipo clase*/
+	display: flex;
+	justify-content: center;/*coloca todo el contenido en el centro*/
+	align-items: center; /*alinea los items en el medio*/
+	height: 100vh;/*le damos una altura de 100vh (significa que le damos el 100% de toda la view)*/
+}
+
+.calculadora { /*modificamos la clase calculadora*/
+	display: grid; /*crea una grilla en la cual pondremos todos los botones*/
+	grid-template-columns: repeat(4, 75px); /*creamos cuatro columnas de 75px las cuales se repiten hacia abajo de las anteriores*/
+	grid-template-rows: 160px /*altura del display*/repeat(5, 75px);
+	background-color: #00916e;/*fondo de la calculadora (verde)*/
+	padding: 15px;/*espacio entre caracteres*/
+	border-radius: 32px;/*radio de los bordes*/
+	box-shadow: 15px 10px 0px 5px #00000033; /*tamaño de las sombras 15px sobre eje x, 10px sobre eje, 0px y 5px de tamaño, color negro*/
+
+}
+
+	button{ /*no lleva punto ya que es un selector "de tipo"*/
+		cursor: pointer;
+		margin: 5px;
+		padding: 0;
+		border-radius: 32px;
+		font-size: 1.5em; /*tamaño del boton 1em = 16px*/
+		border: none;/*ningun borde ya que hay por defecto*/
+		background-color: #00916e;
+		box-shadow: 5px 5px 10px -3px #00000033, -5px -5px 15px 3px #00ffc12f;
+	}	
+
+	button:active { /*para que cuando pasamos por encima cambie de color (levemente en este caso)*/
+		background-color: #006f54;
+
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+	.col-2{  /*agrandamos los botones*/
+		grid-column: span 2;
+	}
+
+	.display {
+		grid-column: 1 / -1; /*ponemos el tamaño del display*/
+		padding: 16px;
+		display: flex;
+		margin: 10px 10px 20px; /*10 arriba 10 alos costados y 20 abajo*/
+		flex-direction: column; /*para que los resultados salgan un arriba del ortro*/
+		align-items: flex-end;
+		background-color: #363636;
+		border-radius: 32px; /*redondeamos el borde*/
+		text-align: right;
+		justify-content: space-between;
+		word-break: break-all;
+		box-shadow: 0px 0px 0px 10px #00000033;
+	}
+
+	#valor-actual { /*se usa "#" porque es un selector de tipo id*/
+		font-size: 32px;
+		}
+
+	#valor-anterior {
+		font-size: 24px;
+	}
+
