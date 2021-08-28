@@ -44,7 +44,7 @@ class Display
 	{
 		if(numero === '.' && this.valorActual.includes('.')) return //ponemos esto para que solo se pueda poner una vez el punto
 		this.valorActual = this.valorActual.toString() + numero.toString(); //el num que se esta agregando sea igual al que recibimos
-		this.imprimirValores();            //toString vuelve al valor un tipo string
+		this.imprimirValores();	//toString vuelve al valor un tipo string
 	}
 
 	imprimirValores() 
